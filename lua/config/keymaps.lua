@@ -190,4 +190,19 @@ map('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbol
 map({'n', 'i'}, '<F2>', vim.lsp.buf.rename, {desc = '[R]e[n]ame'})
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-   map({'n' , 'i'}, '<F8>', vim.lsp.buf.code_action, {desc = '[C]ode [A]ction', })
+map({'n' , 'i'}, '<F8>', vim.lsp.buf.code_action, {desc = '[C]ode [A]ction', })
+map({'n', 'i'}, '<F5>', '<cmd>FlutterRun<cr>', {    desc = 'Flutter Run'})
+map({'n', 'i'}, '<F6>', '<cmd>FlutterReload<cr>', {    desc = 'Flutter Hot Reload'})
+
+
+
+map({'n', 'x', 'v'}, '<leader>ccg', function()
+      local input = vim.fn.input("Quick Chat: ")
+      if input ~= "" then
+        require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+      end
+    end,  { desc = "Quick Chat" })
+map({'n', 'v', 'x'}, '<leader>ccp',  function()
+      local actions = require("CopilotChat.actions")
+      require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+    end,  { desc = "Prompt Chat" })
