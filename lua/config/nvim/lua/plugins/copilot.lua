@@ -52,6 +52,7 @@ return {
   {
     "giuxtaposition/blink-cmp-copilot",
     enabled = vim.g.ai_cmp, -- only enable if needed
+
     specs = {
       {
         "blink.cmp",

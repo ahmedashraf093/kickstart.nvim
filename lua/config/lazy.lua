@@ -25,6 +25,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     { import = "lazyvim.plugins.extras.lang.php" },
     { import = "lazyvim.plugins.extras.editor.telescope" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.lang.prisma" },
 
     -- import/override with your plugins
     { import = "plugins" },
@@ -59,3 +62,4 @@ require("lazy").setup({
     },
   },
 })
+require("flutter-tools").setup({ fvm = false })

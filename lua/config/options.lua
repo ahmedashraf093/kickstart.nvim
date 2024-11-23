@@ -13,3 +13,5 @@ vim.opt.showbreak = "↪ "
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true
 vim.lsp.inlay_hint.enable(false)
+vim.g.ai_cmp = false
+vim.g.ai_autocmd = false
